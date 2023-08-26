@@ -40,7 +40,7 @@ router.get('/', (req: Request, res: Response) => {
 })
 
 router.get('/detail', (req, res) => {
-  res.send('hello ')
+  res.send('hello detaild  ')
 })
 
 export default router

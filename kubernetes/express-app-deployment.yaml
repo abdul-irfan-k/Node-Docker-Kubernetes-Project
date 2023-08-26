@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-app-deployment
+  labels: express-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-app-deployment
+  template:
+    metadata:
+      labels:
+        app: express-app-deployment
+    spec:
+      containers:
+      - name: express-app-deploy
+        imagePullPolicy: IfNotPresent
+        image: 
+        ports:
+        - containerPort: 8000

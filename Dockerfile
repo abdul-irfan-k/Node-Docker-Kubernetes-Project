@@ -4,9 +4,9 @@ WORKDIR /app
 COPY  ./package.json .
 # RUN npm install
 
- RUN if [ "$NODE_ENV" = "development" ]; \
-        then npm install; \
-        else npm install --only=production; \
+RUN if [ "$NODE_ENV" = "development" ]; \
+        then npm install --only=production; \
+        else npm install; \
         fi
 COPY . .
 EXPOSE 8000
