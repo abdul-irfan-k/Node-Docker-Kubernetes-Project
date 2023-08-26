@@ -7,8 +7,8 @@ const port = process.env.PORT || 8000
 
 app.use('/user', userRouter)
 
-connectDb(() => {
-  app.listen(port, () => {
-    console.log(`server listing at http://localhost:${port}`)
-  })
+app.listen(port, () => {
+  console.log(`server listing at http://localhost:${port}`)
 })
+// connectDb(() => {
+// })
