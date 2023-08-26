@@ -1,0 +1,12 @@
+version: '3'
+services:
+  express-app:
+    build:
+      context: ..
+      args:
+        -NODE_ENV=production
+    environment:
+      - NODE_ENV=production
+      - MONGO_USER=irfan
+      - MONGO_PASSWORD=asdf
+    command: npm run start
