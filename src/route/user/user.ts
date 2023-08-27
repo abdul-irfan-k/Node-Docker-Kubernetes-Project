@@ -1,9 +1,9 @@
 import express from 'express'
-import { loginHandler, signUpHandler } from '../../controller/user'
+import { loginHandler, signUpHandler, userPageHandler } from '../../controller/user.js'
 
 const router = express.Router()
 
-
+router.get('/',userPageHandler)
 router.get('/signup', signUpHandler)
 router.get('/login',loginHandler)
 

@@ -23,3 +23,7 @@ export const signUpHandler = async (req: Request, res: Response) => {
 }
 
 export const loginHandler = async (req: Request, res: Response) => {}
+
+export const userPageHandler = async (req: Request, res: Response) => {
+  res.status(200).json({ isValid: true })
+}
