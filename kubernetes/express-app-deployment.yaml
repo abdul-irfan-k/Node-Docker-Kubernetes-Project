@@ -17,6 +17,6 @@ spec:
       containers:
       - name: express-app-image
         imagePullPolicy: IfNotPresent
-        image: test-node-app
+        image: express-app-image
         ports:
         - containerPort: 8000

@@ -1,46 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express'
+import express from 'express'
+import { loginHandler, signUpHandler } from '../../controller/user'
 
 const router = express.Router()
 
-const data = [
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: 'asdf' },
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: 'irfan' },
-]
 
-const sd = [
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: `irfan` },
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: 'irfan' },
-  { name: 'irfan' },
-]
-
-const addValue = (name: string) => {
-  return name
-}
-
-function testVAl(name: string = 'asdf') {
-  return 'name'
-}
-
-const val: string = 'sdfsdfsdf'
-
-const test = ' sdfg'
-
-router.get('/', (req: Request, res: Response) => {
-  console.log(req.url)
-  res.status(200).json({ name: 'irfan' })
-})
-
-router.get('/detail', (req, res) => {
-  res.send('hello detaild  ')
-})
+router.get('/signup', signUpHandler)
+router.get('/login',loginHandler)
 
 export default router
