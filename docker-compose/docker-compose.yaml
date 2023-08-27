@@ -5,6 +5,7 @@ services:
       context: ..
       args: 
       - NODE_ENV=production
+    image: express-app-image
     ports:
       - '8000:8000'
     command: npm start

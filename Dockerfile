@@ -5,9 +5,9 @@ COPY  ./package.json .
 # RUN npm install
 
 RUN if [ "$NODE_ENV" = "development" ]; \
-        then npm install --only=production; \
-        else npm install; \
-        fi
+    then npm install --only=production; \
+    else npm install; \
+    fi
 COPY . .
 EXPOSE 8000
 CMD ["npm","run","dev"]
