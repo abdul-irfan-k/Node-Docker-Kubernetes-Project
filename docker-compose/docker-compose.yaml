@@ -5,10 +5,9 @@ services:
       context: ..
       args: 
       - NODE_ENV=production
-    image: express-app-images
+    image: express-app-image-test
     ports:
     - '8000:8000'
-    command: npm start
     depends_on:
       - mongo-db
 

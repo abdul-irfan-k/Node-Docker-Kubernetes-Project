@@ -17,6 +17,8 @@ spec:
       containers:
       - name: express-app-image
         imagePullPolicy: IfNotPresent
-        image: express-app-image
+        image: express-app-image-test
         ports:
         - containerPort: 8000
+      # imagePullSecrets:
+      # - name: registry-secrets
