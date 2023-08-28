@@ -8,7 +8,8 @@ import {
 const router = express.Router()
 
 router.get('/', userPageHandler)
-router.get('/signup', signUpHandler)
-router.get('/login', loginHandler)
+router.post('/signup', signUpHandler)
+router.post('/login', loginHandler)
+
 
 export default router

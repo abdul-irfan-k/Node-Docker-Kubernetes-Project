@@ -15,18 +15,20 @@ spec:
       containers:
       - name: express-app-image
         imagePullPolicy: IfNotPresent
-        image: express-app-image-test
+        image: express-apps-image
         env:
           - name: TEST_VAL
             valueFrom:
               secretKeyRef: 
                 name: express-app-secret
                 key: test-env
+          - name : MONGO_URL_TEST
+            valueFrom:
               configMapKeyRef:
                 name: express-app-config
-                key: mongo-db-service
+                key: mongo-url
               
         ports:
         - containerPort: 8000
-      # imagePullSecrets:
-      # - name: registry-secrets
+      imagePullSecrets:
+      - name: registry-secrets

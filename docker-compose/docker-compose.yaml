@@ -5,7 +5,7 @@ services:
       context: ..
       args: 
       - NODE_ENV=production
-    image: express-app-image-test
+    image: express-apps-image
     ports:
     - '8000:8000'
     depends_on:
