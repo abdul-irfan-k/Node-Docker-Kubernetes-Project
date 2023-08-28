@@ -18,6 +18,12 @@ spec:
       - name: express-app-image
         imagePullPolicy: IfNotPresent
         image: express-app-image-test
+        env:
+          - name: TEST_VAL
+            valueFrom:
+              secretKeyRef: 
+                name: express-app-secret
+                key: test-env
         ports:
         - containerPort: 8000
       # imagePullSecrets:
