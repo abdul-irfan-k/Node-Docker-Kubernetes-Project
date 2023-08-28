@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: express-app-deployment
-  labels: 
-    app: express-app
 spec:
   replicas: 1
   selector:
@@ -24,6 +22,10 @@ spec:
               secretKeyRef: 
                 name: express-app-secret
                 key: test-env
+              configMapKeyRef:
+                name: express-app-config
+                key: mongo-db-service
+              
         ports:
         - containerPort: 8000
       # imagePullSecrets:

@@ -1,24 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:
-  lables:
-
+  name: mongo-db-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app:  
+      app: mongo-db-app
   template:
     metadata:
       labels:
-        app:
+        app: mongo-db-app
     spec:
       containers:
-        name:
-        image:
+      - name: mongo-db-app-image
+        imagePullPolicy: IfNotPresent
+        image: mongo
         ports:
-          containerPort:
-        env:
-          name: 
-          env: 
+        - containerPort: 27017

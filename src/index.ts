@@ -10,5 +10,12 @@ app.use('/user', userRouter)
 app.listen(port, () => {
   console.log(`server listing at http://localhost:${port}`)
 })
-// connectDb(() => {
-// })
+
+let conn = false
+connectDb(() => {
+  conn = true
+})
+
+app.use('/test', (req, res) => {
+  res.status(200).json({ conn })
+})

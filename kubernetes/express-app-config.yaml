@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: express-app-config
+data:
+  mongo-url: mongo-db-service
+  
